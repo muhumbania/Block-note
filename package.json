@@ -1,0 +1,17 @@
+{
+  "name": "block-note",
+  "version": "1.0.0",
+  "description": "A basic block note to practice database integration with express\r js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss build styles.css -o output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+  
+}
