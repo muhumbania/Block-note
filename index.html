@@ -22,9 +22,13 @@
         </div>
     </header>
     <div class="flex flex-col px-80 mt-6 bg-slate-500">
-        <div class="w-full rounded-lg bg-red-400 h-24 pl-4">
+        <div class="w-full relative rounded-lg bg-red-400 h-24 pl-4 flex flex-col justify-center gap-2">
             <h1 class="text-2xl">This is the title</h1>
             <p>This is a body, this is a body, this is a body, this is a body</p>
+            <div class="absolute bottom-0 right-1">
+                <box-icon type='solid' name='edit'></box-icon>
+                <box-icon name='trash'></box-icon>
+            </div>
         </div>
     </div>
 </body>
