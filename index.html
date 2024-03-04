@@ -9,16 +9,16 @@
     <title>BlocNote</title>
 </head>
 <body>
-    <header class="flex h-16 bg-gray-400 justify-between items-center gap-4 px-8">
-        <div class="basis-1/4 flex-shrink-0 bg-green-200">
+    <header class="flex h-16 bg-white border border-b-2 border-gray-100 justify-between items-center gap-4 px-8">
+        <div class="basis-1/4 flex-shrink-0 cursor-pointer">
             BlocNote
         </div>
-        <div class="basis-1/2 bg-blue-200 flex items-center">
-            <box-icon name='search'></box-icon>
-            <input type="text" class="w-full h-12 placeholder:italic placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-md" placeholder="search for notes">
+        <div class="basis-1/2 flex flex-row-reverse justify-center items-center gap-1">
+            <box-icon name='search' class="cursor-pointer"></box-icon>
+            <input type="text" class="w-full h-12 placeholder:italic placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg" placeholder="search for notes">
         </div>
-        <div class="basis-1/4 flex-shrink-0 bg-red-300 flex justify-end">
-            <box-icon type='solid' name='user-circle' size="md"></box-icon>
+        <div class="basis-1/4 flex-shrink-0 flex justify-end">
+            <box-icon type='solid' name='user-circle' size="md" class="cursor-pointer"></box-icon>
         </div>
     </header>
 </body>
