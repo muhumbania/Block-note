@@ -17,9 +17,12 @@
             <box-icon name='search' class="hidden md:inline cursor-pointer"></box-icon>
             <input type="text" class="w-full h-12 placeholder:italic placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg md:inline hidden" placeholder="search for notes">
         </div>
-        <div class="basis-1/4 flex-shrink- flex gap-2 items-center justify-end">
+        <div class="relative basis-1/4 flex-shrink- flex gap-2 items-center justify-end">
             <box-icon name='search' class=" md:hidden cursor-pointer"></box-icon>
             <box-icon type='solid' name='user-circle' size="md" class="cursor-pointer"></box-icon>
+            <div class="absolute top-10 w-32 p-2 bg-slate-100 rounded-md shadow-sm cursor-pointer">
+                Log out
+            </div>
         </div>
     </header>
     <div class="flex flex-col justify-center items-center gap-4 mt-6 bg-slate-5">
