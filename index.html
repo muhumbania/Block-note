@@ -10,14 +10,15 @@
 </head>
 <body class="relative">
     <header class="flex h-16 bg-white border border-b-2 border-gray-100 justify-between items-center gap-1 px-8">
-        <div class="basis-1/4 flex-shrink-0 cursor-pointer">
+        <div class="basis-1/4 flex-shrink- cursor-pointer">
             BlocNote
         </div>
         <div class="basis-1/2 flex flex-row-reverse justify-center items-center gap-1">
-            <box-icon name='search' class="cursor-pointer"></box-icon>
-            <input type="text" class="w-full h-12 placeholder:italic placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg" placeholder="search for notes">
+            <box-icon name='search' class="hidden md:inline cursor-pointer"></box-icon>
+            <input type="text" class="w-full h-12 placeholder:italic placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg md:inline hidden" placeholder="search for notes">
         </div>
-        <div class="basis-1/4 flex-shrink-0 flex justify-end">
+        <div class="basis-1/4 flex-shrink- flex gap-2 items-center justify-end">
+            <box-icon name='search' class=" md:hidden cursor-pointer"></box-icon>
             <box-icon type='solid' name='user-circle' size="md" class="cursor-pointer"></box-icon>
         </div>
     </header>
