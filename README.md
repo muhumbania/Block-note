@@ -8,3 +8,4 @@ Features:
 -Edit a note
 -Delete a note 
 -Filter notes 
+-login and logout
