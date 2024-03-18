@@ -64,21 +64,15 @@
         </div>
     </div>
 
-    <div class="container">
-        <h2>Create Block Note</h2>
-        <form id="noteForm">
-          <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" id="title" name="title" required>
-          </div>
-          <div class="form-group">
-            <label for="body">Body:</label>
-            <textarea id="body" name="body" required></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit">Create Note</button>
-          </div>
-        </form>
+    <div class="px-5 sm:px-20 bg-gray-100 py-10 flex flex-col justify-center items-center gap-8" id="contact-section">
+        <h1 class="text-2xl border-l-4 pl-2 border-blue-400">Create a note</h1>
+        <div class="flex justify-center items-center w-full font-[Cabin] contact-form">
+            <form action="#" method="POST" class="flex flex-col gap-2 md:w-[50vw] w-full">
+                <input type="text" placeholder="Title of the note" class="py-2 px-2 text-lg outline-gray-200 text-gray-900 placeholder:font-light shadow-md">
+                <textarea name="message" id="" rows="6" placeholder="Your note here" class="py-2 px-2 text-lg outline-gray-200 text-gray-900 placeholder:font-light shadow-md"></textarea>
+                <button type="submit" value="Envoyer" class="bg-black py-2 text-white font-semibold">Envoyer</button>
+            </form>
+        </div>
     </div>
 
     <footer class="absolute w-[100vw] bg-slate-400 text-center bottom-0 left-0 right-0">
