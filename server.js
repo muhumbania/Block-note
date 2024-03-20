@@ -15,6 +15,10 @@ app.get('/create', (req, res) => {
     res.render("create.ejs");
 });
 
+app.get('/show', (req, res) => {
+    res.render("show.ejs");
+});
+
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`);
 });
