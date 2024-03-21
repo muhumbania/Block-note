@@ -1,9 +1,12 @@
-<%= include('partials/header.ejs') %>
+<%- include('partials/header.ejs') %>
     <div class="flex flex-col justify-center items-center gap-4 mt-6 bg-slate-5">
-        <div class="flex w-[700px] justify-start gap-2 cursor-pointer">
-            <box-icon name='left-arrow' ></box-icon>
-            <p>Back</p>
-        </div>
+        <a href="/">
+            <div class="flex w-[700px] justify-start gap-2 cursor-pointer">
+                <box-icon name='left-arrow' ></box-icon>
+                <p>Back</p>
+            </div>
+        </a>
+        
         <div class="text-3xl font-semibold pb-4 border-b-2 border-slate-300 w-[90vw] md:w-[700px] text-center">
             This is the title
         </div>
@@ -20,4 +23,4 @@
         </div>
     </div>
 
-<%= include('partials/footer.ejs') %>
+<%- include('partials/footer.ejs') %>
