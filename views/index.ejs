@@ -24,11 +24,11 @@
                 <a href="/show">
                     <div class="w-[90vw] md:w-[700px] relative rounded-lg bg-white border border-slate-300 h-24 px-4 flex flex-col justify-center gap-2 cursor-pointer">
                         <div class="flex w-full justify-between items-center">
-                            <h1 class="text-2xl">This is the title</h1>
-                            <p class="text-sm">24/03/2024</p>
+                            <h1 class="text-2xl"><%= note.title %></h1>
+                            <p class="text-sm"><%= dateFormater(note.note_date)%></p>
                         </div>
                         
-                        <p>This is a body, this is a body, this is a body, this is a body</p>
+                        <p><%= note.body %></p>
                         <div class="hidden sm:flex absolute bottom-0 right-1">
                             <box-icon type='solid' name='edit' class="cursor-pointer"></box-icon>
                             <box-icon name='trash' class="cursor-pointer"></box-icon>

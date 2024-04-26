@@ -19,6 +19,7 @@ app.use(express.static("public"));
 
 app.get('/', (req, res) => {
     db.query('SELECT * FROM notes', function(err, result){
+
         console.log(result.rows);
         res.render("index.ejs", {notes : result.rows});
     });
@@ -44,3 +45,18 @@ app.get('/register', (req, res) => {
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`);
 });
+
+function dateFormater(dateString){
+
+    const dateObj = new Date(dateString);
+
+    // Get year, month (0-indexed), day
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth() + 1; // Adjust for 0-based indexing
+    const day = dateObj.getDate();
+
+    // Format date as YYYY-MM-DD
+    return`${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+}
+
+app.locals.dateFormater = dateFormater;

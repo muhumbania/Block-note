@@ -11,4 +11,4 @@ filterBtn.addEventListener('click', function(){
     }else{
         filters.classList.add('hidden');
     }
-})
+});
