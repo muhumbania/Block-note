@@ -19,8 +19,6 @@ app.use(express.static("public"));
 
 app.get('/', (req, res) => {
     db.query('SELECT * FROM notes', function(err, result){
-
-        console.log(result.rows);
         res.render("index.ejs", {notes : result.rows});
     });
     
@@ -28,6 +26,17 @@ app.get('/', (req, res) => {
 
 app.get('/create', (req, res) => {
     res.render("create.ejs");
+});
+
+app.post('/create', (req, res) => {
+    const newDate = new Date();
+    const title = req.body.title;
+    const body = req.body.body;
+    db.query('INSERT INTO notes (title, body, note_date) VALUES ($1, $2, $3)', [title, body, newDate])
+
+    console.log(req.body);
+
+    res.redirect('/');
 });
 
 app.get('/show', (req, res) => {
