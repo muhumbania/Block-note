@@ -18,7 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-    res.render("index.ejs");
+    db.query('SELECT * FROM notes', function(err, result){
+        console.log(result.rows);
+        res.render("index.ejs", {notes : result.rows});
+    });
+    
 });
 
 app.get('/create', (req, res) => {
