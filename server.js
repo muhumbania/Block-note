@@ -47,6 +47,15 @@ app.get('/show/:id', (req, res) => {
     res.render("show.ejs");
 });
 
+app.post('/delete/:id', (req, res) => {
+    // const id = req.params.id;
+    // db.query('SELECT * FROM notes WHERE id = $1', [id], function(err, result){
+    //     console.log(result.rows);
+    // });
+    console.log("Hello");
+    res.redirect('/');
+});
+
 app.get('/login', (req, res) => {
     res.render("login.ejs");
 });

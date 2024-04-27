@@ -1,6 +1,7 @@
 const filterBtn = document.querySelector('.filter-btn');
 const filters = document.querySelector('.filters');
 let state = false;
+const form = document.getElementById('deleteForm');
 
 
 filterBtn.addEventListener('click', function(){
@@ -12,3 +13,7 @@ filterBtn.addEventListener('click', function(){
         filters.classList.add('hidden');
     }
 });
+
+function submitForm(){
+    form.submit();
+}

@@ -21,20 +21,21 @@
         </div>
         
             <% notes.forEach(note => { %>
-                <a href= <%=`/show/${note.id}` %> >
-                    <div class="w-[90vw] md:w-[700px] relative rounded-lg bg-white border border-slate-300 h-24 px-4 flex flex-col justify-center gap-2 cursor-pointer" name="id" value="<%= note.id  %>">
+                
+                    <div class="w-[90vw] md:w-[700px] relative rounded-lg bg-white border border-slate-300 h-24 px-4 flex flex-col justify-center gap-2" name="id" value="<%= note.id  %>">
                         <div class="flex w-full justify-between items-center">
-                            <h1 class="text-2xl"><%= note.title %></h1>
+                            <a href= <%=`/show/${note.id}` %> ><h1 class="text-2xl"><%= note.title %></h1></a>
                             <p class="text-sm"><%= dateFormater(note.note_date)%></p>
                         </div>
                         
                         <p><%= note.body %></p>
                         <div class="hidden sm:flex absolute bottom-0 right-1">
                             <box-icon type='solid' name='edit' class="cursor-pointer"></box-icon>
-                            <box-icon name='trash' class="cursor-pointer"></box-icon>
+                            <form action="<%= `/delete/${note.id}` %>" method="post" id="deleteForm">
+                                <box-icon name='trash' class="cursor-pointer" onclick="submitForm()"></box-icon>
+                            </form>                                                    
                         </div>
                     </div>
-                </a>
             <% }); %>
         
     </div>
