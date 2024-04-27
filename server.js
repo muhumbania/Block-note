@@ -25,16 +25,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/create', (req, res) => {
-    res.render("create.ejs");
+    res.render("create.ejs", {type: "Create a note"});
 });
 
 app.post('/create', (req, res) => {
     const newDate = new Date();
     const title = req.body.title;
     const body = req.body.body;
-    db.query('INSERT INTO notes (title, body, note_date) VALUES ($1, $2, $3)', [title, body, newDate])
-
-    console.log(req.body);
+    db.query('INSERT INTO notes (title, body, note_date) VALUES ($1, $2, $3)', [title, body, newDate]);
 
     res.redirect('/');
 });
@@ -52,6 +50,14 @@ app.post('/delete/:id', (req, res) => {
     db.query('DELETE FROM notes WHERE id = $1', [id], function(err, result){
     });
     res.redirect('/');
+});
+
+app.get('/edit/:id', (req, res) => {
+    const id = req.params.id;
+    db.query('SELECT * FROM notes WHERE id = $1', [id], function(err, result){
+        // console.log(result.rows);
+    });
+    res.render("create.ejs", {note: res.rows, type: "Edit a note"});
 });
 
 app.get('/login', (req, res) => {
