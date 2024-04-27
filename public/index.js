@@ -1,7 +1,7 @@
 const filterBtn = document.querySelector('.filter-btn');
 const filters = document.querySelector('.filters');
 let state = false;
-const form = document.getElementById('deleteForm');
+const deleteForm = document.getElementById('deleteForm');
 
 
 filterBtn.addEventListener('click', function(){
@@ -14,6 +14,6 @@ filterBtn.addEventListener('click', function(){
     }
 });
 
-function submitForm(){
-    form.submit();
+function deleteNote(){
+    deleteForm.submit();
 }

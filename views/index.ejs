@@ -32,7 +32,7 @@
                         <div class="hidden sm:flex absolute bottom-0 right-1">
                             <box-icon type='solid' name='edit' class="cursor-pointer"></box-icon>
                             <form action="<%= `/delete/${note.id}` %>" method="post" id="deleteForm">
-                                <box-icon name='trash' class="cursor-pointer" onclick="submitForm()"></box-icon>
+                                <box-icon name='trash' class="cursor-pointer" onclick="deleteNote()"></box-icon>
                             </form>                                                    
                         </div>
                     </div>
