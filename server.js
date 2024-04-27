@@ -39,7 +39,11 @@ app.post('/create', (req, res) => {
     res.redirect('/');
 });
 
-app.get('/show', (req, res) => {
+app.get('/show/:id', (req, res) => {
+    const id = req.params.id;
+    db.query('SELECT * FROM notes WHERE id = $1', [id], function(err, result){
+        // console.log(result.rows);
+    });
     res.render("show.ejs");
 });
 

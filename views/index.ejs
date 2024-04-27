@@ -21,8 +21,8 @@
         </div>
         
             <% notes.forEach(note => { %>
-                <a href="/show">
-                    <div class="w-[90vw] md:w-[700px] relative rounded-lg bg-white border border-slate-300 h-24 px-4 flex flex-col justify-center gap-2 cursor-pointer">
+                <a href= <%=`/show/${note.id}` %> >
+                    <div class="w-[90vw] md:w-[700px] relative rounded-lg bg-white border border-slate-300 h-24 px-4 flex flex-col justify-center gap-2 cursor-pointer" name="id" value="<%= note.id  %>">
                         <div class="flex w-full justify-between items-center">
                             <h1 class="text-2xl"><%= note.title %></h1>
                             <p class="text-sm"><%= dateFormater(note.note_date)%></p>
