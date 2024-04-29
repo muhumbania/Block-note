@@ -30,7 +30,7 @@
                         
                         <p><%= note.body %></p>
                         <div class="hidden sm:flex absolute bottom-0 right-1">
-                            <a href= <%=`/edit/${note.id}` %> ><box-icon type='solid' name='edit' class="cursor-pointer"></box-icon></a>   
+                            <a href="<%=`/edit/${note.id}` %>" ><box-icon type='solid' name='edit' class="cursor-pointer"></box-icon></a>   
                             <form action="<%= `/delete/${note.id}` %>" method="post" id="deleteForm">
                                 <box-icon name='trash' class="cursor-pointer" onclick="deleteNote()"></box-icon>
                             </form>                                                    

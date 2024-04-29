@@ -17,10 +17,9 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get('/', (req, res) => {
-    db.query('SELECT * FROM notes', function(err, result){
-        res.render("index.ejs", {notes : result.rows});
-    });
+app.get('/', async (req, res) => {
+    const result = await db.query('SELECT * FROM notes');
+    res.render("index.ejs", {notes : result.rows});
     
 });
 
@@ -28,36 +27,41 @@ app.get('/create', (req, res) => {
     res.render("create.ejs", {type: "Create a note"});
 });
 
-app.post('/create', (req, res) => {
+app.post('/create', async (req, res) => {
     const newDate = new Date();
     const title = req.body.title;
     const body = req.body.body;
-    db.query('INSERT INTO notes (title, body, note_date) VALUES ($1, $2, $3)', [title, body, newDate]);
+    await db.query('INSERT INTO notes (title, body, note_date) VALUES ($1, $2, $3)', [title, body, newDate]);
 
     res.redirect('/');
 });
 
-app.get('/show/:id', (req, res) => {
+app.get('/show/:id', async (req, res) => {
     const id = req.params.id;
-    db.query('SELECT * FROM notes WHERE id = $1', [id], function(err, result){
+    await db.query('SELECT * FROM notes WHERE id = $1', [id], function(err, result){
         // console.log(result.rows);
     });
     res.render("show.ejs");
 });
 
-app.post('/delete/:id', (req, res) => {
+app.post('/delete/:id', async (req, res) => {
     const id = req.params.id;
-    db.query('DELETE FROM notes WHERE id = $1', [id], function(err, result){
-    });
+    await db.query('DELETE FROM notes WHERE id = $1', [id]);
     res.redirect('/');
 });
 
-app.get('/edit/:id', (req, res) => {
+app.get('/edit/:id([0-9]+)', async (req, res) => {
+
     const id = req.params.id;
-    db.query('SELECT * FROM notes WHERE id = $1', [id], function(err, result){
-        // console.log(result.rows);
-    });
-    res.render("create.ejs", {note: res.rows, type: "Edit a note"});
+
+    try{
+        const result = await db.query('SELECT * FROM notes WHERE id = $1', [id]);
+        const note = result.rows[0];
+        res.render("create.ejs", {note: note, type: "Edit a note"});
+    }catch(err){
+        console.log(err);
+    }
+    
 });
 
 app.get('/login', (req, res) => {
