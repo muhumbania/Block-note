@@ -19,13 +19,19 @@ app.use(express.static("public"));
 
 app.get('/', async (req, res) => {
     const result = await db.query('SELECT * FROM notes');
-    res.render("index.ejs", {notes : result.rows});
+    res.render("index.ejs", {notes : result.rows, type : ""});
     
 });
 
 app.get('/asc', async (req, res) => {
     const result = await db.query('SELECT * FROM notes ORDER BY note_date ASC');
-    res.render("index.ejs", {notes : result.rows});
+    res.render("index.ejs", {notes : result.rows, type : "asc"});
+    
+});
+
+app.get('/desc', async (req, res) => {
+    const result = await db.query('SELECT * FROM notes ORDER BY note_date DESC');
+    res.render("index.ejs", {notes : result.rows, type: "desc"});
     
 });
 
