@@ -9,12 +9,12 @@
         </div>
     </a>
     <div class="flex justify-center items-center w-full contact-form">
-        <form action="/create" method="POST" class="flex flex-col gap-2 md:w-[50vw] w-full">
+        <form action="<%= type === "Edit a note"?`/edit/${note.id}`: "/create"  %>" method="POST" class="flex flex-col gap-2 md:w-[50vw] w-full">
             <input type="text" id="title" name="title" placeholder="Title of the note" value="<%= type === "Edit a note"? note.title: ""  %>" class="py-2 px-2 text-lg placeholder:italic placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg">
-            <textarea name="body" id="" rows="6" placeholder="Your note here" class="py-2 px-2 text-lg placeholder-italic placeholder-text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg">
+            <textarea name="body" id="" rows="6" placeholder="Your note here" class="py-2 px-2 text-lg placeholder-italic text-left placeholder-text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-400 rounded-lg">
                 <%= type === "Edit a note" ? note.body : "" %>
             </textarea>
-            <button type="submit" value="create" class="bg-black py-2 text-white font-semibold rounded-lg">Create</button>
+            <button type="submit" value="<%= type === "Edit a note"? "edit": "create"  %>" class="bg-black py-2 text-white font-semibold rounded-lg"><%= type === "Edit a note"? "Edit": "Create"  %></button>
         </form>
     </div>
 </div>

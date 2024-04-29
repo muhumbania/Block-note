@@ -64,6 +64,17 @@ app.get('/edit/:id([0-9]+)', async (req, res) => {
     
 });
 
+app.post('/edit/:id([0-9]+)', async (req, res) => {
+    const newDate = new Date();
+    const title = req.body.title;
+    const body = req.body.body;
+    const id = req.params.id;
+    
+    await db.query('UPDATE notes SET title = $1, body = $2, note_date = $3 WHERE id = $4', [title, body, newDate, id]);
+
+    res.redirect('/');
+});
+
 app.get('/login', (req, res) => {
     res.render("login.ejs");
 });
