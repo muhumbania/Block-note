@@ -23,6 +23,12 @@ app.get('/', async (req, res) => {
     
 });
 
+app.get('/asc', async (req, res) => {
+    const result = await db.query('SELECT * FROM notes ORDER BY note_date ASC');
+    res.render("index.ejs", {notes : result.rows});
+    
+});
+
 app.get('/create', (req, res) => {
     res.render("create.ejs", {type: "Create a note"});
 });
@@ -69,7 +75,7 @@ app.post('/edit/:id([0-9]+)', async (req, res) => {
     const title = req.body.title;
     const body = req.body.body;
     const id = req.params.id;
-    
+
     await db.query('UPDATE notes SET title = $1, body = $2, note_date = $3 WHERE id = $4', [title, body, newDate, id]);
 
     res.redirect('/');
