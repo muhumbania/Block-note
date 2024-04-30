@@ -10,20 +10,9 @@
         <div class="bg-white flex flex-col items-center p-4 rounded-lg">
             <h1 class="text-lg mb-2">Sign up</h1>
             <form action="" method="post" class="flex flex-col gap-6 w-[280px] text-gray-600">
-                <div class="flex justify-between">
-                    <label for="name">Username</label>
-                    <input type="text" id="username" name="username" class="bg-gray-100 outline-gray-200 p-0.5" required>
-                </div>
-                
-                <div class="flex justify-between">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="bg-gray-100 outline-gray-200 p-0.5" required>
-                </div>
-                
-                <div class="flex justify-between">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="bg-gray-100 outline-gray-200 p-0.5" required>
-                </div>
+                <input type="text" id="username" name="username" placeholder="username" class="placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-600 rounded-lg w-full" required> 
+                <input type="email" id="email" name="email" placeholder="email" class="placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-600 rounded-lg w-full" required>
+                <input type="password" id="password" name="password" placeholder="password" class="placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-600 rounded-lg w-full" required>
                 <input type="submit" value="Sign up" class="bg-black text-white text-md font-medium p-1 rounded-md cursor-pointer">
                 <p>Already have an account? <a href="/login" class="underline underline-offset-2 text-black font-bold">Sign in</a></p>
             </form>
