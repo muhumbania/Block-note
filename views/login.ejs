@@ -4,6 +4,7 @@
     <title>Sign in</title>
     <link href="./styles/signup.css" type="text/css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 <body>
     <div class="h-[100vh] flex justify-center items-center bg-gray-200 gap-8">
@@ -12,6 +13,10 @@
             <form action="" method="post" class="flex flex-col gap-6 w-[280px] justify-center text-gray-600">
                 <input type="text" id="username" name="username" placeholder="username" class=" placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-600 rounded-lg w-full" required>
                 <input type="password" id="password" name="password" placeholder="password" class="placeholder:text-slate-400 p-1 border border-slate-300 focus:outline-none focus:text-slate-600 rounded-lg w-full" required>
+                <div class="flex w-full justify-center gap-4 border border-slate-300 rounded-lg p-1 cursor-pointer">
+                    <box-icon type='logo' name='google'></box-icon>
+                    <p>Sign in with google</p>
+                </div>
                 <input type="submit" value="Sign in" class="bg-black text-white text-md font-medium p-1 rounded-md cursor-pointer w-full">
                 <p>Don't have an account? <a href="/register" class="underline underline-offset-2 text-black font-bold">Sign up</a></p>
             </form>
